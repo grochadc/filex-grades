@@ -27,7 +27,7 @@ function App() {
         code === "EXTERNO" ? (
           <NameChooser grades={getExternalGrades()} setCode={setCode} />
         ) : (
-          <Grades code={code} items={{ ...grades[code] }} />
+          <Grades code={code} />
         )
       ) : null}
     </div>
