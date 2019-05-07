@@ -3,7 +3,7 @@ import styled, { createGlobalStyle } from "styled-components";
 import Form from "./components/Form";
 import Grades from "./components/Grades";
 import NameChooser from "./components/NameChooser";
-import grades from "./data/grades.json";
+import { grades } from "./data/grades.json";
 
 const GlobalStyle = createGlobalStyle`
 body {
@@ -35,10 +35,7 @@ function App() {
 }
 
 function getExternalGrades() {
-  const externalCodes = Object.keys(grades).filter(
-    code => code.search("EXTERNO") > -1
-  );
-  return externalCodes.map(code => grades[code]);
+  return grades.filter(student => student.codigo.search("EXTERNO") > -1);
 }
 
 export default App;
