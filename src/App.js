@@ -3,6 +3,7 @@ import styled, { createGlobalStyle } from "styled-components";
 import Form from "./components/Form";
 import Grades from "./components/Grades";
 import NameChooser from "./components/NameChooser";
+import grades from "./data/grades.json";
 
 const GlobalStyle = createGlobalStyle`
 body {
