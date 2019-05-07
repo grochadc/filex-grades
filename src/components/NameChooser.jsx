@@ -17,9 +17,9 @@ cursor: pointer;
 const NameChooser = props => {
   return (
     <List>
-      {props.names.map(name => (
-        <li>
-          <Link onClick={() => props.setCode("1234")}>{name}</Link>
+      {props.grades.map(item => (
+        <li key={item.nombre}>
+          <Link onClick={() => props.setCode(item.codigo)}>{item.nombre}</Link>
         </li>
       ))}
     </List>

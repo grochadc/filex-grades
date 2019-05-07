@@ -25,16 +25,20 @@ function App() {
       <Form setCode={setCode} />
       {code ? (
         code === "EXTERNO" ? (
-          <NameChooser
-            names={["Julia", "Karen", "Leticia"]}
-            setCode={setCode}
-          />
+          <NameChooser grades={getExternalGrades()} setCode={setCode} />
         ) : (
-          <Grades code={code} />
+          <Grades code={code} items={{ ...grades[code] }} />
         )
       ) : null}
     </div>
   );
+}
+
+function getExternalGrades() {
+  const externalCodes = Object.keys(grades).filter(
+    code => code.search("EXTERNO") > -1
+  );
+  return externalCodes.map(code => grades[code]);
 }
 
 export default App;

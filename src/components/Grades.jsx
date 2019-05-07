@@ -14,10 +14,28 @@ const Grades = props => {
   return (
     <Container>
       <Table>
-        <tr>
-          <td>Code:</td>
-          <td>{props.code}</td>
-        </tr>
+        <thead>
+          <tr>
+            <td>Code:</td>
+            <td>Name:</td>
+            <td>Midterm Written:</td>
+            <td>Midterm Oral:</td>
+            <td>Final Written:</td>
+            <td>Final Oral:</td>
+            <td>Total:</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{props.items.codigo}</td>
+            <td>{props.items.nombre}</td>
+            <td>{props.items.midterm_escrito}</td>
+            <td>{props.items.midterm_oral}</td>
+            <td>{props.items.final_escrito}</td>
+            <td>{props.items.final_oral}</td>
+            <td>{props.items.final}</td>
+          </tr>
+        </tbody>
       </Table>
     </Container>
   );
