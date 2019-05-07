@@ -3,6 +3,9 @@ import styled from "styled-components";
 
 const Table = styled.table`
   border: 1px solid;
+  td {
+    border: 1px solid;
+  }
 `;
 
 const Container = styled.div``;
