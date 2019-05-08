@@ -3,14 +3,28 @@ import styled from "styled-components";
 import axios from "axios";
 
 const Table = styled.table`
-  border: 1px solid;
+  &,
   td {
     border: 1px solid;
-    cell-margin: 0;
   }
+  tbody td {
+    text-align: center;
+  }
+  display: flex;
+  tr {
+    display: flex;
+    flex-direction: column;
+  }
+  thead {
+    font-weight: bold;
+  }
+  margin: auto;
 `;
 
-const Container = styled.div``;
+const Container = styled.div`
+  display: flex;
+  width: 100%;
+`;
 
 const Grades = props => {
   const [data, setData] = useState({});
