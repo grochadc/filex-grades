@@ -33,6 +33,12 @@ const Grades = props => {
             <td>Midterm Oral:</td>
             <td>Final Written:</td>
             <td>Final Oral:</td>
+            <td>Project 1:</td>
+            <td>Project 2:</td>
+            <td>Project 3:</td>
+            <td>Moodle Platform:</td>
+            <td>Reading:</td>
+            <td>Conversation (extra points):</td>
             <td>Total:</td>
           </tr>
         </thead>
@@ -44,6 +50,12 @@ const Grades = props => {
             <td>{data.midterm_oral}</td>
             <td>{data.final_escrito}</td>
             <td>{data.final_oral}</td>
+            <td>{data.proyecto1}</td>
+            <td>{data.proyecto2}</td>
+            <td>{data.proyecto3}</td>
+            <td>{data.moodle}</td>
+            <td>{data.reading}</td>
+            <td>{data.conversation}</td>
             <td>{data.final}</td>
           </tr>
         </tbody>
