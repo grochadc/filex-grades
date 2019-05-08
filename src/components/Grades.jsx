@@ -16,13 +16,12 @@ const Grades = props => {
   const [data, setData] = useState({});
   useEffect(
     () => {
-      axios(`http://localhost:3000/grades?codigo=${props.code}`).then(
+      axios(`http://localhost:3001/grades?codigo=${props.code}`).then(
         ({ data }) => setData(data[0])
       );
     },
     [props.code]
   );
-  console.log(data);
   return (
     <Container>
       <Table>
