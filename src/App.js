@@ -1,21 +1,17 @@
 import React, { useEffect, useState } from "react";
-import styled, { createGlobalStyle } from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import axios from "axios";
+import { primaryTheme, secondaryTheme } from "./styles/theme";
 import Form from "./components/Form";
 import Grades from "./components/Grades";
 import NameChooser from "./components/NameChooser";
-
-const GlobalStyle = createGlobalStyle`
-body {
-  color: white;
-  background-color:#282c34;
-}
-`;
 
 const Title = styled.h1`
   text-align: center;
 `;
 const Section = styled.section`
+background: ${({ theme }) => theme.background}
+color: ${({ theme }) => theme.primary}
   height: 35vh;
   display: flex;
   flex-direction:column;
@@ -32,20 +28,23 @@ function App() {
   const [external] = useFetch("http://localhost:3001/external");
   return (
     <div>
-      <GlobalStyle />
-      <Section>
-        <Title>Teacher Gonzalo's Final Grades</Title>
-        <Form setCode={setCode} />
-      </Section>
-      <Section>
-        {code ? (
-          code === "EXTERNO" ? (
-            <NameChooser setCode={setCode} grades={external} />
-          ) : (
-            <Grades code={code} />
-          )
-        ) : null}
-      </Section>
+      <ThemeProvider theme={primaryTheme}>
+        <Section>
+          <Title>Teacher Gonzalo's Final Grades</Title>
+          <Form setCode={setCode} />
+        </Section>
+      </ThemeProvider>
+      <ThemeProvider theme={secondaryTheme}>
+        <Section>
+          {code ? (
+            code === "EXTERNO" ? (
+              <NameChooser setCode={setCode} grades={external} />
+            ) : (
+              <Grades code={code} />
+            )
+          ) : null}
+        </Section>
+      </ThemeProvider>
     </div>
   );
 }

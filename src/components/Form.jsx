@@ -7,7 +7,7 @@ const Container = styled.div`
 
 const Link = styled.button`
   background: none!important;
-  color: inherit;
+  color: ${({ theme }) => theme.secondary};
   border: none;
   padding:0!important;
   font: inherit;
