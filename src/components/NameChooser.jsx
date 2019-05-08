@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
+const Container = styled.div`
+  margin: auto;
+`;
 const List = styled.ul`
   list-style: none;
 `;
@@ -16,13 +19,18 @@ cursor: pointer;
 
 const NameChooser = props => {
   return (
-    <List>
-      {props.grades.map(item => (
-        <li key={item.nombre}>
-          <Link onClick={() => props.setCode(item.codigo)}>{item.nombre}</Link>
-        </li>
-      ))}
-    </List>
+    <Container>
+      Haz click en tu nombre:
+      <List>
+        {props.grades.map(item => (
+          <li key={item.nombre}>
+            <Link onClick={() => props.setCode(item.codigo)}>
+              {item.nombre}
+            </Link>
+          </li>
+        ))}
+      </List>
+    </Container>
   );
 };
 

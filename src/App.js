@@ -15,6 +15,17 @@ body {
 const Title = styled.h1`
   text-align: center;
 `;
+const Section = styled.section`
+  height: 35vh;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  &:nth-of-type(2n) {
+    height: 65vh
+    background-color: white;
+    color: black;
+  }
+`;
 
 function App() {
   const [code, setCode] = useState();
@@ -22,15 +33,19 @@ function App() {
   return (
     <div>
       <GlobalStyle />
-      <Title>Teacher Gonzalo's Final Grades</Title>
-      <Form setCode={setCode} />
-      {code ? (
-        code === "EXTERNO" ? (
-          <NameChooser setCode={setCode} grades={external} />
-        ) : (
-          <Grades code={code} />
-        )
-      ) : null}
+      <Section>
+        <Title>Teacher Gonzalo's Final Grades</Title>
+        <Form setCode={setCode} />
+      </Section>
+      <Section>
+        {code ? (
+          code === "EXTERNO" ? (
+            <NameChooser setCode={setCode} grades={external} />
+          ) : (
+            <Grades code={code} />
+          )
+        ) : null}
+      </Section>
     </div>
   );
 }
