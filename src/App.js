@@ -26,7 +26,11 @@ color: ${({ theme }) => theme.primary}
 
 function App() {
   const [code, setCode] = useState();
-  const [external] = useFetch("http://localhost:3001/external");
+  const [external] = useFetch(
+    process.env.NODE_ENV === "production"
+      ? `${process.env.HEROKU_APP}:${process.env.PORT}/external`
+      : "http://localhost:3001/external"
+  );
   return (
     <div>
       <ThemeProvider theme={primaryTheme}>

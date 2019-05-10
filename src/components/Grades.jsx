@@ -26,9 +26,13 @@ const Grades = props => {
   const [data, setData] = useState({});
   useEffect(
     () => {
-      axios(`http://localhost:3001/grades?codigo=${props.code}`).then(
-        ({ data }) => setData(data[0])
-      );
+      axios(
+        process.env.NODE_ENV === "production"
+          ? `${process.env.HEROKU_APP}:${process.env.PORT}/grades?codigo=${
+              props.code
+            }`
+          : `http://localhost:3001/grades?codigo=${props.code}`
+      ).then(({ data }) => setData(data[0]));
     },
     [props.code]
   );
