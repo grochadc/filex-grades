@@ -28,7 +28,7 @@ const Grades = props => {
     () => {
       axios(
         process.env.NODE_ENV === "production"
-          ? `${process.env.HEROKU_APP}:${process.env.PORT}/grades?codigo=${
+          ? `${process.env.HEROKU_URL}:${process.env.PORT}/grades?codigo=${
               props.code
             }`
           : `http://localhost:3001/grades?codigo=${props.code}`

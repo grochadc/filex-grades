@@ -28,7 +28,7 @@ function App() {
   const [code, setCode] = useState();
   const [external] = useFetch(
     process.env.NODE_ENV === "production"
-      ? `${process.env.HEROKU_APP}:${process.env.PORT}/external`
+      ? `${process.env.HEROKU_URL}:${process.env.PORT}/external`
       : "http://localhost:3001/external"
   );
   return (
