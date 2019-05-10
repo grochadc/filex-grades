@@ -3,6 +3,7 @@ import styled from "styled-components";
 import axios from "axios";
 
 const Table = styled.table`
+  border-radius: 5px;
   &,
   td {
     border: 1px solid;
@@ -10,12 +11,7 @@ const Table = styled.table`
   tbody td {
     text-align: center;
   }
-  display: flex;
-  tr {
-    display: flex;
-    flex-direction: column;
-  }
-  thead {
+  td:nth-child(1) {
     font-weight: bold;
   }
   margin: auto;
@@ -39,37 +35,57 @@ const Grades = props => {
   return (
     <Container>
       <Table>
-        <thead>
-          <tr>
-            <td>Code:</td>
-            <td>Name:</td>
-            <td>Midterm Written:</td>
-            <td>Midterm Oral:</td>
-            <td>Final Written:</td>
-            <td>Final Oral:</td>
-            <td>Project 1:</td>
-            <td>Project 2:</td>
-            <td>Project 3:</td>
-            <td>Moodle Platform:</td>
-            <td>Reading:</td>
-            <td>Conversation (extra points):</td>
-            <td>Total:</td>
-          </tr>
-        </thead>
         <tbody>
           <tr>
+            <td>Code:</td>
             <td>{data.codigo}</td>
+          </tr>
+          <tr>
+            <td>Name:</td>
             <td>{data.nombre}</td>
+          </tr>
+          <tr>
+            <td>Midterm Written:</td>
             <td>{data.midterm_escrito}</td>
+          </tr>
+          <tr>
+            <td>Midterm Oral:</td>
             <td>{data.midterm_oral}</td>
+          </tr>
+          <tr>
+            <td>Final Written:</td>
             <td>{data.final_escrito}</td>
+          </tr>
+          <tr>
+            <td>Final Oral:</td>
             <td>{data.final_oral}</td>
+          </tr>
+          <tr>
+            <td>Project 1:</td>
             <td>{data.proyecto1}</td>
+          </tr>
+          <tr>
+            <td>Project 2:</td>
             <td>{data.proyecto2}</td>
+          </tr>
+          <tr>
+            <td>Project 3:</td>
             <td>{data.proyecto3}</td>
+          </tr>
+          <tr>
+            <td>Moodle Platform:</td>
             <td>{data.moodle}</td>
+          </tr>
+          <tr>
+            <td>Reading:</td>
             <td>{data.reading}</td>
+          </tr>
+          <tr>
+            <td>Conversation (extra points):</td>
             <td>{data.conversation}</td>
+          </tr>
+          <tr>
+            <td>Total:</td>
             <td>{data.final}</td>
           </tr>
         </tbody>
