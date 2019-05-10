@@ -6,6 +6,8 @@ import Form from "./components/Form";
 import Grades from "./components/Grades";
 import NameChooser from "./components/NameChooser";
 
+import heroku_domain_port from "./variables";
+
 const Title = styled.h1`
   text-align: center;
 `;
@@ -28,7 +30,7 @@ function App() {
   const [code, setCode] = useState();
   const [external] = useFetch(
     process.env.NODE_ENV === "production"
-      ? `${process.env.HEROKU_URL}:${process.env.PORT}/external`
+      ? `${heroku_domain_port}/external`
       : "http://localhost:3001/external"
   );
   return (
