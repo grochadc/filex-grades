@@ -5,7 +5,7 @@ const primaryTheme = {
 };
 const secondaryTheme = {
   primary: "black",
-  secondary: "#ECD078",
+  secondary: "#282c34",
   background: "white"
 };
 

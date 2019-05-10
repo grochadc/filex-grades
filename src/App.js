@@ -12,14 +12,15 @@ const Title = styled.h1`
 const Section = styled.section`
 background: ${({ theme }) => theme.background}
 color: ${({ theme }) => theme.primary}
-  height: 35vh;
+  height: 40%;
   display: flex;
   flex-direction:column;
   justify-content: center;
   &:nth-of-type(2n) {
-    height: 65vh
+    height: 60%
     background-color: white;
     color: black;
+    align-items: center;
   }
 `;
 
