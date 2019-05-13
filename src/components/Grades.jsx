@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
 
-//import heroku_domain_port from "../variables";
-const heroku_domain_port = "http://localhost:3000";
+import heroku_domain_port from "../variables";
 
 const Table = styled.table`
   border-radius: 5px;
