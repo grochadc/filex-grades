@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
 
-import heroku_domain_port from "../variables";
+//import heroku_domain_port from "../variables";
+const heroku_domain_port = "http://localhost:3000";
 
 const Table = styled.table`
   border-radius: 5px;
@@ -31,7 +32,7 @@ const Grades = props => {
       axios(
         process.env.NODE_ENV === "production"
           ? `${heroku_domain_port}/grades?codigo=${props.code}`
-          : `http://localhost:3001/grades?codigo=${props.code}`
+          : `http://localhost:3000/grades?codigo=${props.code}`
       ).then(({ data }) => setData(data[0]));
     },
     [props.code]
