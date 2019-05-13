@@ -1,4 +1,4 @@
 const { HEROKU_URL } = process.env;
-const heroku_domain_port = HEROKU_URL.substr(0, HEROKU_URL.lenght - 1);
+const heroku_domain_port = "https://filex-grades.herokuapp.com";
 
 export default heroku_domain_port;
