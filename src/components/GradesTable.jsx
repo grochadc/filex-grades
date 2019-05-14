@@ -1,4 +1,5 @@
 import React from "react";
+import propTypes from "prop-types";
 import styled from "styled-components";
 
 const Table = styled.table`
@@ -86,6 +87,10 @@ const GradesTable = ({ grades }) => {
       </Table>
     </Container>
   );
+};
+
+GradesTable.propTypes = {
+  grades: propTypes.object.isRequired
 };
 
 export default GradesTable;

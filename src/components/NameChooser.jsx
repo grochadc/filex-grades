@@ -1,4 +1,5 @@
 import React from "react";
+import propTypes from "prop-types";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -32,6 +33,11 @@ const NameChooser = props => {
       </List>
     </Container>
   );
+};
+
+NameChooser.propTypes = {
+  grades: propTypes.array.isRequired,
+  setCode: propTypes.func.isRequired
 };
 
 export default NameChooser;

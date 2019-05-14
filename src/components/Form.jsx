@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import propTypes from "prop-types";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -28,10 +29,20 @@ const Form = props => {
       <button onClick={() => props.setCode(value)}>Send</button>
       <p>
         Eres externo y no tienes codigo? Click{" "}
-        <Link onClick={() => props.setCode("EXTERNO")}>aqui</Link>.
+        <Link
+          onClick={() => props.setCode("EXTERNO")}
+          data-testid="externos-link"
+        >
+          aqui
+        </Link>
+        .
       </p>
     </Container>
   );
+};
+
+Form.propTypes = {
+  setCode: propTypes.func.isRequired
 };
 
 export default Form;
