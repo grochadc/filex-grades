@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders without crashing 1`] = `
+<div>
+  <div>
+    <section
+      class="sc-htoDjs blDzrv"
+    >
+      <h1
+        class="sc-gzVnrw hDwEie"
+      >
+        Teacher Gonzalo's Final Grades
+      </h1>
+      <div
+        class="sc-bdVaJa khUSez"
+      >
+        Code:
+         
+        <input
+          type="text"
+          value=""
+        />
+         
+        <button>
+          Send
+        </button>
+        <p>
+          Eres externo y no tienes codigo? Click
+           
+          <button
+            class="sc-bwzfXH jAzBCL"
+            data-testid="externos-link"
+          >
+            aqui
+          </button>
+          .
+        </p>
+      </div>
+    </section>
+    <section
+      class="sc-htoDjs bVebbx"
+    />
+  </div>
+</div>
+`;
