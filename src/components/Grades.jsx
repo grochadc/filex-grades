@@ -31,7 +31,7 @@ const Grades = props => {
       axios(
         process.env.NODE_ENV === "production"
           ? `${heroku_domain_port}/grades?codigo=${props.code}`
-          : `http://localhost:3000/grades?codigo=${props.code}`
+          : `http://localhost:3001/grades?codigo=${props.code}`
       ).then(({ data }) => setData(data[0]));
     },
     [props.code]

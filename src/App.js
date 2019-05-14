@@ -31,7 +31,7 @@ function App() {
   const [external] = useFetch(
     process.env.NODE_ENV === "production"
       ? `${heroku_domain_port}/external`
-      : "http://localhost:3000/external"
+      : "http://localhost:3001/external"
   );
   return (
     <div>
