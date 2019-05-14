@@ -42,7 +42,13 @@ const Grades = props => {
         <tbody>
           <tr>
             <td>Code:</td>
-            <td>{data.codigo}</td>
+            <td>
+              {data.codigo
+                ? data.codigo.search("EXTERNO") === 0
+                  ? "EXTERNO"
+                  : data.codigo
+                : null}
+            </td>
           </tr>
           <tr>
             <td>Name:</td>
