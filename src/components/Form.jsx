@@ -20,13 +20,16 @@ const Form = props => {
   const [value, setValue] = useState();
   return (
     <Container>
-      Code:{" "}
+      <label htmlFor="code">Code:</label>{" "}
       <input
         value={value}
         onChange={({ target }) => setValue(target.value)}
         type="text"
+        id="code"
       />{" "}
-      <button onClick={() => props.setCode(value)}>Send</button>
+      <button onClick={() => props.setCode(value)} data-testid="send-button">
+        Send
+      </button>
       <p>
         Eres externo y no tienes codigo? Click{" "}
         <Link

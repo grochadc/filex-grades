@@ -25,7 +25,10 @@ const NameChooser = props => {
       <List>
         {props.grades.map(item => (
           <li key={item.nombre}>
-            <Link onClick={() => props.setCode(item.codigo)}>
+            <Link
+              data-testid="externo-item"
+              onClick={() => props.setCode(item.codigo)}
+            >
               {item.nombre}
             </Link>
           </li>

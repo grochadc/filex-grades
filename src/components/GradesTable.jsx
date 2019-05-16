@@ -29,7 +29,7 @@ const GradesTable = ({ grades }) => {
         <tbody>
           <tr>
             <td>Code:</td>
-            <td>
+            <td data-testid="codigo-grades">
               {grades.codigo.search("EXTERNO") === 0
                 ? "EXTERNO"
                 : grades.codigo}

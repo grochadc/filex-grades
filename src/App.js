@@ -61,7 +61,7 @@ function useFetch(url, dependency) {
   useEffect(
     () => {
       if (dependency) {
-        axios(url).then(({ data }) => setData(data));
+        axios.get(url).then(({ data }) => setData(data));
       } else if (dependency === undefined) {
         setData([]);
       }
