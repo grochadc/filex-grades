@@ -52,12 +52,12 @@ function App() {
               <NameChooser setCode={setCode} grades={external} />
             ) : grades.length ? (
               <GradesTable grades={grades[0]} />
-            ) : (
+            ) : grades.error === "404" ? (
               <div>
                 <Warning>Estudiante no encontrado.</Warning>
                 <Warning>Favor de de revisar el codigo.</Warning>{" "}
               </div>
-            )
+            ) : null
           ) : null}
         </Section>
       </ThemeProvider>
@@ -70,7 +70,13 @@ function useFetch(url, dependency) {
   useEffect(
     () => {
       if (dependency) {
-        axios.get(url).then(({ data }) => setData(data));
+        axios.get(url).then(({ data }) => {
+          if (data.length === 0) {
+            setData({ error: "404" });
+          } else {
+            setData(data);
+          }
+        });
       } else if (dependency === undefined) {
         setData([]);
       }
