@@ -6,7 +6,8 @@ const primaryTheme = {
 const secondaryTheme = {
   primary: "black",
   secondary: "#282c34",
-  background: "white"
+  background: "white",
+  warning: "#cc3300"
 };
 
 export { primaryTheme, secondaryTheme };

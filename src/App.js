@@ -26,6 +26,10 @@ color: ${({ theme }) => theme.primary}
   }
 `;
 
+const Warning = styled.h2`
+  color: ${({ theme }) => theme.warning};
+`;
+
 function App() {
   const [code, setCode] = useState();
   const [external] = useFetch(`${db_fetch_url}/external`, true);
@@ -48,7 +52,12 @@ function App() {
               <NameChooser setCode={setCode} grades={external} />
             ) : grades.length ? (
               <GradesTable grades={grades[0]} />
-            ) : null
+            ) : (
+              <div>
+                <Warning>Estudiante no encontrado.</Warning>
+                <Warning>Favor de de revisar el codigo.</Warning>{" "}
+              </div>
+            )
           ) : null}
         </Section>
       </ThemeProvider>
