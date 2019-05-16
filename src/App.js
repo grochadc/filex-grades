@@ -44,14 +44,11 @@ function App() {
       <ThemeProvider theme={secondaryTheme}>
         <Section>
           {code ? (
-            code === "EXTERNO" ? (
+            code === "EXTERNO" && external ? (
               <NameChooser setCode={setCode} grades={external} />
-            ) : (
-              /*If we get an empty arr we pass a deault obj*/
-              <GradesTable
-                grades={grades.length ? grades[0] : { codigo: "EXTERNO_" }}
-              />
-            )
+            ) : grades.length ? (
+              <GradesTable grades={grades[0]} />
+            ) : null
           ) : null}
         </Section>
       </ThemeProvider>
