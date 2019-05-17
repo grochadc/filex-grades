@@ -16,6 +16,7 @@
     "build-db": "node ./lib/csvParser.js",
     "test": "react-scripts test",
     "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
+    "start-db": "json-server --watch ./data/grades.json -p 3001",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
