@@ -37,6 +37,7 @@
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
   "devDependencies": {
+    "axios-mock-adapter": "^1.16.0",
     "jest-mock-axios": "^3.0.0",
     "prop-types": "^15.7.2",
     "react-testing-library": "^7.0.0"
