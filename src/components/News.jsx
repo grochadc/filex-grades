@@ -8,13 +8,9 @@ const News = () => {
         <strong>A los alumnos de los grupos 2-1, 2-2 y 2-3:</strong>
       </p>
       <p>
-        Hubo un problema con la subida de su segundo proyecto en la plataforma.
+        Sus calificaciones corregidas con el proyecto 2 ya estan disponibles en
+        esta plataforma.
       </p>
-      <p>Si ustedes estan seguros que lo hicieron, no se preocupen.</p>
-      <p>
-        En el transcurso de la mañana arreglare este error en la plataforma.
-      </p>
-      <p>De igual forma pueden pasar al salon por sus calificaciones.</p>
       <p>
         <strong>A los alumnos de nivel 4:</strong>
       </p>
