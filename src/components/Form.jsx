@@ -17,19 +17,26 @@ const Link = styled.button`
 `;
 
 const Form = props => {
-  const [value, setValue] = useState();
+  const [code, setCode] = useState();
   return (
     <Container>
-      <label htmlFor="code">Code:</label>{" "}
-      <input
-        value={value}
-        onChange={({ target }) => setValue(target.value)}
-        type="text"
-        id="code"
-      />{" "}
-      <button onClick={() => props.setCode(value)} data-testid="send-button">
-        Send
-      </button>
+      <form>
+        <label htmlFor="text-input">Code:</label>{" "}
+        <input
+          type="text"
+          id="text-input"
+          value={code}
+          onChange={({ target }) => setCode(target.value)}
+        />{" "}
+        <button
+          onClick={e => {
+            e.preventDefault();
+            props.setCode(code);
+          }}
+        >
+          Send
+        </button>
+      </form>
       <p>
         Eres externo y no tienes codigo? Click{" "}
         <Link

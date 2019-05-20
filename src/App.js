@@ -32,7 +32,10 @@ const Warning = styled.h2`
 
 function App() {
   const [code, setCode] = useState();
-  const [external] = useFetch(`${db_fetch_url}/external`, true);
+  const [external] = useFetch(
+    `${db_fetch_url}/external`,
+    code === "EXTERNO" ? true : undefined
+  );
   const [grades] = useFetch(
     `${db_fetch_url}/grades?codigo=${code}`,
     code === "EXTERNO" ? undefined : code
@@ -70,6 +73,7 @@ function useFetch(url, dependency) {
   useEffect(
     () => {
       if (dependency) {
+        console.log("Called axios");
         axios
           .get(url)
           .then(({ data }) => {
