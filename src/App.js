@@ -5,6 +5,7 @@ import { primaryTheme, secondaryTheme } from "./styles/theme";
 import Form from "./components/Form";
 import GradesTable from "./components/GradesTable";
 import NameChooser from "./components/NameChooser";
+import News from "./components/News";
 
 import { db_fetch_url } from "./variables";
 
@@ -50,6 +51,7 @@ function App() {
       </ThemeProvider>
       <ThemeProvider theme={secondaryTheme}>
         <Section>
+          {code ? null : <News />}
           {code ? (
             code === "EXTERNO" && external ? (
               <NameChooser setCode={setCode} grades={external} />
